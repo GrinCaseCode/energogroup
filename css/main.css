@@ -131,7 +131,7 @@ form {
 .footer__nav a:hover,
 .phone-main:hover,
 .menu a:hover {
-color: #0099FF;
+	color: #0099FF;
 }
 .phone-main {
 	font-weight: 700;
@@ -750,7 +750,7 @@ color: #0099FF;
 }
 .image-cooperation {
 	height: 933px;
-margin-right: calc((100vw - 1470px) / 2* -1);
+	margin-right: calc((100vw - 1460px) / 2* -1);
 }
 .image-cooperation img {
 	width: 100%;
@@ -790,10 +790,13 @@ margin-right: calc((100vw - 1470px) / 2* -1);
 	flex: 1;
 	margin: 0 15px;
 }
+.line-form .btn-main {
+	padding: 0;
+}
 .slider-cooperation .line-form {
 	margin-top: 63px;
 }
-.slider-controls {
+.cooperation .slider-controls {
 	padding-top: 80px;
 }
 .counter-cooperation {
@@ -866,15 +869,22 @@ margin-right: calc((100vw - 1470px) / 2* -1);
 }
 .item-sertificat__image {
 	width: 314px;
-height: 445px;
-display: block;
-margin: 0 auto;
-margin-bottom: 41px;
+	height: 445px;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 41px;
+}
+.item-sertificat__image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	font-family: 'object-fit: cover;';
 }
 .item-sertificat__title {
 	font-size: 20px;
 	line-height: 28px;
 	padding-left: 80px;
+	padding-right: 30px;
 	font-weight: 500;
 	color: #fff;
 	position: relative;
@@ -997,7 +1007,7 @@ margin-bottom: 41px;
 	margin-bottom: 22px;
 	letter-spacing: 0.05em;
 	font-weight: 700;
-text-transform: uppercase;
+	text-transform: uppercase;
 }
 .footer__nav a {
 	color: #fff;
@@ -1027,7 +1037,7 @@ text-transform: uppercase;
 	margin-top: 40px;
 	color: #B1B1B1;
 	padding: 15px 0;
-border-top: 1px solid #D9D9D9;
+	border-top: 1px solid #D9D9D9;
 }
 .footer-bottom a {
 	color: #B1B1B1;
