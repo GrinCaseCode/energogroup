@@ -132,7 +132,7 @@ form {
 .phone-main:hover,
 .menu a:hover {
 	color: #0099FF;
-}
+} 
 .phone-main {
 	font-weight: 700;
 	font-size: 18px;
@@ -154,6 +154,12 @@ form {
 	justify-content: center;
 	flex: none;
 	border: 1px solid #F4F4F4;
+}
+.list-icons a:hover {
+	border-color: #0099FF;
+}
+.list-icons a:hover img {
+filter: invert(0.6) sepia(1) hue-rotate(159deg) saturate(5) brightness(1);
 }
 .list-icons li {
 	margin-right: 15px;
