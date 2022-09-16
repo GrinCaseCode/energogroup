@@ -128,6 +128,11 @@ form {
 	text-transform: uppercase;
 	color: #FFFFFF;
 }
+.footer__nav a:hover,
+.phone-main:hover,
+.menu a:hover {
+color: #0099FF;
+}
 .phone-main {
 	font-weight: 700;
 	font-size: 18px;
@@ -996,10 +1001,6 @@ text-transform: uppercase;
 }
 .footer__nav a {
 	color: #fff;
-	border-bottom: 1px solid transparent;
-}
-.footer__nav a:hover {
-	border-color: #fff;
 }
 .footer__nav li {
 	margin-bottom: 15px;
