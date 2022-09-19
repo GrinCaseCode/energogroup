@@ -23,21 +23,27 @@ if ( $(this).scrollTop() > 0 && $menu.hasClass("default") ){
 
 
 	//кнопка sandwich
-	$(".btn_nav").click(function() {
-		$(".sandwich").toggleClass("active");
-		if ($(".menu").is(":hidden")) {
-			$(".menu").slideDown(200);
+	$(".sandwich").click(function() {
+		$(this).toggleClass("active");
+		if ($(".menu-mobile").is(":hidden")) {
+			$(".menu-mobile").slideDown(200);
+			$(".header").addClass("active");
 		} else {
-			$(".menu").slideUp(200);
+			$(".menu-mobile").slideUp(200);
+			$(".header").removeClass("active");
 		}
-		
 	});
 
-	$(".menu a").click(function() {
-		$(".menu").slideUp(200);
-		$(".sandwich").removeClass("active");
-	});
 
+
+{
+		if ($(window).width() < 992) { 
+			$(".footer__title").click(function() {
+				$(this).toggleClass("active");
+				$(this).next(".footer__content").slideToggle(200);
+			});
+		}
+	}
 	//слайдер
 
 	$('.slider-billbord').each(function(){
@@ -70,6 +76,7 @@ if ( $(this).scrollTop() > 0 && $menu.hasClass("default") ){
 				arrows: true,
 				autoplay: true,
 				dots: false,
+				autoplaySpeed: 4000,
 				touchThreshold: 1000,
 				prevArrow: '<div class="slick-prev slick-arrow"><i class="far fa-long-arrow-left"></i><div/>',
 				nextArrow: '<div class="slick-next slick-arrow"><i class="far fa-long-arrow-right"></i><div/>',
@@ -110,7 +117,49 @@ if ( $(this).scrollTop() > 0 && $menu.hasClass("default") ){
 
 			$slider.slick({
 				arrows: true,
-				autoplay: true,
+				autoplay: false,
+				dots: false,
+				touchThreshold: 1000,
+				prevArrow: '<div class="slick-prev slick-arrow"><i class="far fa-long-arrow-left"></i><div/>',
+				nextArrow: '<div class="slick-next slick-arrow"><i class="far fa-long-arrow-right"></i><div/>',
+				infinite: false,
+				appendArrows: $controls_slider,
+				slidesToScroll: 1,
+				slidesToShow: 1,
+			});
+		} 
+	});
+
+	$('.wrapper-portfolio').each(function(){
+		var $slider = $(this).find(".slider-portfolio");
+		$controls_slider = $(this).find(".slider-controls_portfolio");
+
+		if ($slider.length) {
+			var currentSlide;
+			var slidesCount;
+			var sliderCounter = document.createElement('div');
+			sliderCounter.classList.add('slider__counter');
+
+			var updateSliderCounter = function(slick, currentIndex) {
+				currentSlide = slick.slickCurrentSlide() + 1;
+				slidesCount = slick.slideCount;
+				$(sliderCounter).html('<span>0' + currentSlide + '</span>' + '<span class="slash">/</span> ' +'0' +slidesCount)
+				$(".counter-cooperation").html('<span class="current-counter">0' + currentSlide + '</span>' + '<span class="slash">/ &nbsp;</span> ' +'0' +slidesCount)
+			};
+
+			$slider.on('init', function(event, slick) {
+				$controls_slider.find('.slider-count').append(sliderCounter);
+				updateSliderCounter(slick);
+				$(".slider_number").text(slick.slideCount);
+			});
+
+			$slider.on('afterChange', function(event, slick, currentSlide) {
+				updateSliderCounter(slick, currentSlide);
+			});
+
+			$slider.slick({
+				arrows: true,
+				autoplay: false,
 				dots: false,
 				touchThreshold: 1000,
 				prevArrow: '<div class="slick-prev slick-arrow"><i class="far fa-long-arrow-left"></i><div/>',
@@ -132,6 +181,38 @@ if ( $(this).scrollTop() > 0 && $menu.hasClass("default") ){
 		slidesToScroll: 1,
 		prevArrow: '<div class="slick-prev slick-arrow"><i class="far fa-long-arrow-left"></i><div/>',
 		nextArrow: '<div class="slick-next slick-arrow"><i class="far fa-long-arrow-right"></i><div/>',
+		responsive: [
+		{
+			breakpoint: 992,
+			settings: {
+				slidesToShow: 2,
+			}
+		},
+		{
+			breakpoint: 768,
+			settings: {
+				slidesToShow: 1,
+			}
+		}
+		]
+	});
+
+	$('.row_advantages').slick({
+		arrows: false,
+		dots: false,
+		infinite: false,
+		slidesToShow: 1,
+		variableWidth: true,
+		slidesToScroll:1,
+		prevArrow: '<div class="slick-prev slick-arrow"><i class="fas fa-chevron-left"></i><div/>',
+		nextArrow: '<div class="slick-next slick-arrow"><i class="fas fa-chevron-right"></i><div/>',
+		mobileFirst: true,
+		responsive: [
+		{
+			breakpoint: 768,
+			settings: 'unslick'
+		}
+		]
 	});
 
 	$(".input-phone").mask("+7 (999) 999-99-99");
