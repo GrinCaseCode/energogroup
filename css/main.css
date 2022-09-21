@@ -1540,3 +1540,6 @@ border-radius: 50%;
 .file-upload label:hover span {
 	border-color: transparent;
 }
+.consultation + .footer {
+	margin-top: 1px;
+}
