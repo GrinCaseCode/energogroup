@@ -238,6 +238,8 @@
 	}
 }
 
+
+
 @media only screen and (max-width : 1450px) {
 	.container-fluid {
 		padding: 0 20px;
@@ -894,6 +896,8 @@
 	}
 }
 
+
+
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
 	.row_advantages {
@@ -1106,6 +1110,9 @@
 	}
 }
 
+
+
+
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
 	.descr-billbord, .title-billbord {
@@ -1227,7 +1234,7 @@
 		font-size: 13px;
 		line-height: 20px;
 	}
-	.title-features {
+	.title-features {  
 		font-size: 13px;
 		line-height: 20px;
 		padding: 10px 15px;
